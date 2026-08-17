@@ -36,6 +36,8 @@ type Copy = {
     experience: string;
     projects: string;
     contact: string;
+    toDark: string;
+    toLight: string;
   };
   hero: {
     kicker: string;
@@ -94,6 +96,8 @@ export const copy: Record<Locale, Copy> = {
       experience: "Experiência",
       projects: "Projetos",
       contact: "Contato",
+      toDark: "Ativar modo escuro",
+      toLight: "Ativar modo claro",
     },
     hero: {
       kicker: "Desenvolvedor full stack",
@@ -154,6 +158,8 @@ export const copy: Record<Locale, Copy> = {
       experience: "Experience",
       projects: "Projects",
       contact: "Contact",
+      toDark: "Switch to dark mode",
+      toLight: "Switch to light mode",
     },
     hero: {
       kicker: "Full stack developer",

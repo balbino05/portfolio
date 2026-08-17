@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LanguageSwitch } from "@/components/language-switch";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { t } from "@/content/site";
 import { type Locale, localePath } from "@/lib/i18n";
 
@@ -15,7 +16,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
   ];
 
   return (
-    <header className="sticky top-0 z-20 border-b border-line/80 bg-paper/90 backdrop-blur-md">
+    <header className="sticky top-0 z-20 border-b border-line/80 bg-paper/75 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-3">
         <Link
           href={home}
@@ -25,12 +26,19 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         </Link>
         <nav className="flex items-center gap-4 overflow-x-auto text-sm text-muted sm:gap-6">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-ink">
+            <Link
+              key={link.href}
+              href={link.href}
+              className="whitespace-nowrap transition-colors hover:text-ink"
+            >
               {link.label}
             </Link>
           ))}
         </nav>
-        <LanguageSwitch locale={locale} />
+        <div className="flex shrink-0 items-center gap-2">
+          <LanguageSwitch locale={locale} />
+          <ThemeToggle toDark={text.nav.toDark} toLight={text.nav.toLight} />
+        </div>
       </div>
     </header>
   );

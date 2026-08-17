@@ -19,7 +19,7 @@ export function LanguageSwitch({ locale }: { locale: Locale }) {
     <Link
       href={href}
       hrefLang={other}
-      className="rounded-full border border-line px-3 py-1 font-mono text-xs tracking-widest hover:border-ink"
+      className="rounded-full border border-line px-3 py-1 font-mono text-xs tracking-widest transition-colors hover:border-ink"
     >
       {other.toUpperCase()}
     </Link>
