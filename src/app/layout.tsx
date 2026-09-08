@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { AmbientBackground } from "@/components/ambient-background";
 import { copy } from "@/content/site";
 import "./globals.css";
