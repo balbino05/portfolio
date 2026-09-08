@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { AmbientBackground } from "@/components/ambient-background";
@@ -22,13 +22,10 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ivan-balbino.vercel.app"),
   title: copy.pt.metaTitle,
   description: copy.pt.metaDescription,
   authors: [{ name: "Ivan Cássio Balbino Dias Amaral" }],
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#050505" },
-    { media: "(prefers-color-scheme: light)", color: "#f3efe6" },
-  ],
   openGraph: {
     title: copy.pt.metaTitle,
     description: copy.pt.metaDescription,
@@ -37,6 +34,13 @@ export const metadata: Metadata = {
     type: "website",
     images: [{ url: "/ivan-balbino.png", width: 460, height: 460 }],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#050505" },
+    { media: "(prefers-color-scheme: light)", color: "#f3efe6" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
