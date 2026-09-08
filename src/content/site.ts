@@ -220,8 +220,8 @@ export const copy: Record<Locale, Copy> = {
     about: {
       heading: "About",
       body: [
-        "Mid-level developer based in Contagem (Minas Gerais, Brazil), currently at the State Comptroller General's Office of Minas Gerais. Day to day I work with Vue, PHP/Laravel, Node, and C# on web apps, APIs, and system integrations.",
-        "I have worked in healthcare, foreign trade, fintech, e-commerce, and government. The pattern is consistent: learn the business rules, expose them through REST or GraphQL, and keep the UI usable.",
+        "Mid-level developer based in Contagem (Minas Gerais, Brazil), currently at the State Comptroller General's Office of Minas Gerais. On CGE systems I mainly work with PHP (Yii2, Laravel, and Joomla), JavaScript, Livewire, Alpine.js, Tailwind, MySQL, and Docker.",
+        "I also have experience with Vue, Node, C#, and GraphQL from previous roles. Across contexts, the pattern is consistent: learn the business rules, expose them through APIs or UI, and keep the system usable.",
         "Open to mid/senior full stack roles and freelance work with a clear scope.",
       ],
       location: "Contagem, Minas Gerais, Brazil",
