@@ -11,12 +11,18 @@ export const aiSkills = [
 ] as const;
 
 export const skills = [
+  "PHP",
+  "Yii2",
+  "Laravel",
+  "Joomla",
+  "JavaScript",
+  "Livewire",
+  "Alpine.js",
+  "Tailwind CSS",
   "Vue.js",
   "React",
   "Next.js",
   "Node.js",
-  "PHP",
-  "Laravel",
   "C#",
   "GraphQL",
   "REST",
@@ -137,8 +143,8 @@ export const copy: Record<Locale, Copy> = {
     about: {
       heading: "Sobre",
       body: [
-        "Desenvolvedor pleno em Contagem (MG), hoje na Controladoria-Geral do Estado de Minas Gerais. No dia a dia trabalho com Vue, PHP/Laravel, Node e C#, em aplicações web, APIs e integrações entre sistemas.",
-        "Passei por saúde, comércio exterior, fintech, e-commerce e setor público. Em todos esses contextos, o padrão é o mesmo: entender a regra de negócio, expor isso em API ou GraphQL e manter a interface utilizável.",
+        "Desenvolvedor pleno em Contagem (MG), hoje na Controladoria-Geral do Estado de Minas Gerais. Nos sistemas da CGE trabalho principalmente com PHP (Yii2, Laravel e Joomla), JavaScript, Livewire, Alpine.js, Tailwind, MySQL e Docker.",
+        "Também tenho experiência com Vue, Node, C# e GraphQL em outras empresas. Em todos esses contextos, o padrão é o mesmo: entender a regra de negócio, expor isso em API ou interface e manter o sistema utilizável.",
         "Aberto a vagas pleno/senior full stack e a freelance com escopo bem definido.",
       ],
       location: "Contagem, MG, Brasil",

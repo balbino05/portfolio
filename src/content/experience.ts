@@ -23,11 +23,13 @@ export const experience: ExperienceItem[] = [
     bullets: {
       pt: [
         "Desenvolvimento e manutenção de sistemas web institucionais da Controladoria-Geral do Estado de Minas Gerais.",
-        "Atuação em portais, APIs e aplicações internas usadas no dia a dia da gestão pública.",
+        "Atuação em portais, APIs e aplicações internas (Yii2, Laravel, Joomla) usadas no dia a dia da gestão pública.",
+        "Stack atual nos sistemas: PHP, Yii2, Laravel, JavaScript, Livewire, Alpine.js, Tailwind CSS, MySQL e Docker.",
       ],
       en: [
         "Building and maintaining institutional web systems for the State Comptroller General’s Office of Minas Gerais.",
-        "Work on portals, APIs, and internal applications used in day-to-day public administration.",
+        "Work on portals, APIs, and internal apps (Yii2, Laravel, Joomla) used in day-to-day public administration.",
+        "Current stack on those systems: PHP, Yii2, Laravel, JavaScript, Livewire, Alpine.js, Tailwind CSS, MySQL, and Docker.",
       ],
     },
   },
