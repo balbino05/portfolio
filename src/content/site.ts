@@ -1,6 +1,7 @@
 import type { Locale } from "@/lib/i18n";
 
 export const aiSkills = [
+  "Spec Driven Development",
   "Cursor",
   "GitHub Copilot",
   "Prompt engineering",
@@ -26,6 +27,7 @@ export const skills = [
   "Git",
   "Linux",
   "IA / LLMs",
+  "Spec Driven Development",
 ] as const;
 
 export const site = {
@@ -128,7 +130,7 @@ export const copy: Record<Locale, Copy> = {
     hero: {
       kicker: "Desenvolvedor full stack",
       title: "Ivan Balbino",
-      lead: "Sistemas web, APIs e integrações no setor público e no e-commerce. Uso IA no fluxo de desenvolvimento para entregar mais rápido, com qualidade de produção.",
+      lead: "Sistemas web, APIs e integrações no setor público e no e-commerce. Uso Spec Driven Development e IA no fluxo para gerar código de forma inteligente e entregar com qualidade de produção.",
       ctaProjects: "Ver projetos",
       ctaContact: "Falar comigo",
     },
@@ -145,9 +147,9 @@ export const copy: Record<Locale, Copy> = {
       heading: "Inteligência artificial",
       lead: "IA faz parte do meu jeito de construir software, não só de falar sobre o tema.",
       body: [
-        "Uso Cursor, Copilot e modelos de linguagem no dia a dia para acelerar implementação, refatoração, testes e revisão de código, sem abrir mão de validar o resultado.",
-        "Trabalho com prompt engineering para tarefas de produto e engenharia: gerar fluxos, documentar APIs, explorar opções de arquitetura e reduzir retrabalho.",
-        "Aplico IA onde ela muda o resultado: automação de rotinas, apoio a decisões técnicas e features que realmente usam LLM quando o problema pede.",
+        "No dia a dia uso Spec Driven Development: defino a especificação antes de gerar código, para a IA (e o time) trabalhar com contexto claro, menos retrabalho e entregas mais previsíveis.",
+        "Uso Cursor, Copilot e modelos de linguagem para acelerar implementação, refatoração, testes e revisão de código, sempre validando o resultado.",
+        "Trabalho com prompt engineering e specs para gerar fluxos, documentar APIs, explorar arquitetura e produzir código de forma inteligente, alinhado ao problema real.",
       ],
     },
     experience: {
@@ -205,7 +207,7 @@ export const copy: Record<Locale, Copy> = {
     hero: {
       kicker: "Full stack developer",
       title: "Ivan Balbino",
-      lead: "Web systems, APIs, and integrations across the public sector and e-commerce. I use AI in the development workflow to ship faster with production-level quality.",
+      lead: "Web systems, APIs, and integrations across the public sector and e-commerce. I use Spec Driven Development and AI in the workflow to generate code intelligently and ship with production quality.",
       ctaProjects: "See projects",
       ctaContact: "Get in touch",
     },
@@ -222,9 +224,9 @@ export const copy: Record<Locale, Copy> = {
       heading: "Artificial intelligence",
       lead: "AI is part of how I build software, not only a talking point.",
       body: [
-        "I use Cursor, Copilot, and language models daily to speed up implementation, refactoring, tests, and code review, while still validating the output myself.",
-        "I apply prompt engineering for product and engineering work: draft flows, document APIs, explore architecture options, and cut rework.",
-        "I put AI where it changes outcomes: routine automation, better technical decisions, and product features that use LLMs when the problem calls for it.",
+        "Day to day I use Spec Driven Development: I define the specification before generating code, so AI tools (and the team) work with clear context, less rework, and more predictable delivery.",
+        "I use Cursor, Copilot, and language models to speed up implementation, refactoring, tests, and code review, while still validating the output.",
+        "I combine prompt engineering and specs to draft flows, document APIs, explore architecture, and generate code intelligently against the real problem.",
       ],
     },
     experience: {
