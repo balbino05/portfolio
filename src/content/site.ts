@@ -9,7 +9,7 @@ export const site = {
     "https://www.linkedin.com/in/ivan-c%C3%A1ssio-balbino-dias-amaral-57b26632/",
   cv: "/Ivan_Balbino_CV.pdf",
   whatsapp: "https://wa.me/5531998193805",
-  photo: "/ivan-balbino.jpg",
+  photo: "/ivan-balbino.png",
 } as const;
 
 export const skills = [
