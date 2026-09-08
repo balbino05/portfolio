@@ -16,8 +16,8 @@ export const experience: ExperienceItem[] = [
       en: "Mid-level developer",
     },
     period: {
-      pt: "jun 2026 — presente",
-      en: "Jun 2026 — present",
+      pt: "jun 2026 - presente",
+      en: "Jun 2026 - present",
     },
     current: true,
     bullets: {
@@ -38,8 +38,8 @@ export const experience: ExperienceItem[] = [
       en: "Mid-level developer",
     },
     period: {
-      pt: "2025 — jun 2026",
-      en: "2025 — Jun 2026",
+      pt: "2025 - jun 2026",
+      en: "2025 - Jun 2026",
     },
     bullets: {
       pt: [
@@ -101,8 +101,8 @@ export const experience: ExperienceItem[] = [
       en: "Mid-level developer",
     },
     period: {
-      pt: "2023 — 2024",
-      en: "2023 — 2024",
+      pt: "2023 - 2024",
+      en: "2023 - 2024",
     },
     bullets: {
       pt: [
@@ -139,8 +139,8 @@ export const experience: ExperienceItem[] = [
       en: "Mid-level developer",
     },
     period: {
-      pt: "2021 — 2023",
-      en: "2021 — 2023",
+      pt: "2021 - 2023",
+      en: "2021 - 2023",
     },
     bullets: {
       pt: [

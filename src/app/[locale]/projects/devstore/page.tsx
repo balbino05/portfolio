@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 
 type LocaleParams = { params: Promise<{ locale: string }> };
 
-export default async function ExemploTechPage({ params }: LocaleParams) {
+export default async function DevStorePage({ params }: LocaleParams) {
   const { locale } = await params;
   if (!isLocale(locale)) {
     notFound();
@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: LocaleParams) {
   }
   const text = t(locale);
   return {
-    title: `Exemplo Tech — ${text.metaTitle}`,
+    title: `DevStore | ${text.metaTitle}`,
     alternates: {
-      canonical: localePath(locale, "/projects/exemplo-tech"),
+      canonical: localePath(locale, "/projects/devstore"),
       languages: {
-        pt: localePath("pt", "/projects/exemplo-tech"),
-        en: localePath("en", "/projects/exemplo-tech"),
+        pt: localePath("pt", "/projects/devstore"),
+        en: localePath("en", "/projects/devstore"),
       },
     },
   };

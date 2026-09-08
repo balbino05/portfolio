@@ -1,4 +1,4 @@
-# Portfólio — Ivan Balbino
+# Portfólio | Ivan Balbino
 
 Site pessoal em Next.js (App Router), TypeScript e Tailwind. Conteúdo em português e inglês.
 
@@ -13,9 +13,20 @@ Abre em [http://localhost:3000](http://localhost:3000) (`/pt` por padrão).
 
 Textos, experiência e projetos ficam em `src/content/`.
 
+## Docker
+
+```bash
+docker compose up --build -d
+```
+
+App em [http://localhost:3000](http://localhost:3000).
+
+```bash
+docker compose down
+```
+
 ## Vercel
 
-1. Suba este repositório no GitHub.
-2. Na Vercel: **Add New Project** → escolha o repo.
-3. Em **Branch**, aponte para `vercel`.
-4. Framework: Next.js (detectado sozinho). Build: `next build`.
+1. Conecte o repositório `balbino05/portfolio` na Vercel.
+2. Branch: `main`.
+3. Framework: Next.js (detectado sozinho). Build: `next build`.

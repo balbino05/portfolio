@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Reveal } from "@/components/reveal";
 import { experience } from "@/content/experience";
 import { projects } from "@/content/projects";
-import { site, skills, t } from "@/content/site";
+import { aiSkills, site, skills, t } from "@/content/site";
 import { type Locale, localePath } from "@/lib/i18n";
 
 export function HomeView({ locale }: { locale: Locale }) {
@@ -91,12 +91,44 @@ export function HomeView({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      <section id="ia" className="scroll-mt-24 border-b border-line py-16 sm:py-20">
+        <Reveal>
+          <SectionLabel index="02" title={text.ai.heading} />
+        </Reveal>
+        <Reveal delay={80}>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted">
+            {text.ai.lead}
+          </p>
+        </Reveal>
+        <div className="mt-8 grid gap-10 md:grid-cols-[1.4fr_1fr]">
+          <Reveal delay={120}>
+            <div className="space-y-4 text-[1.05rem] leading-7 text-muted">
+              {text.ai.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal delay={160}>
+            <ul className="flex flex-wrap gap-2">
+              {aiSkills.map((skill) => (
+                <li
+                  key={skill}
+                  className="rounded-full border border-line bg-paper-2 px-3 py-1 font-mono text-[11px] tracking-wide transition-colors hover:border-accent hover:text-ink"
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
       <section
         id="experiencia"
         className="scroll-mt-24 border-b border-line py-16 sm:py-20"
       >
         <Reveal>
-          <SectionLabel index="02" title={text.experience.heading} />
+          <SectionLabel index="03" title={text.experience.heading} />
         </Reveal>
         <ol className="mt-10">
           {experience.map((item, index) => (
@@ -125,7 +157,7 @@ export function HomeView({ locale }: { locale: Locale }) {
 
       <section id="projetos" className="scroll-mt-24 border-b border-line py-16 sm:py-20">
         <Reveal>
-          <SectionLabel index="03" title={text.projects.heading} />
+          <SectionLabel index="04" title={text.projects.heading} />
         </Reveal>
 
         {featured ? (
@@ -157,38 +189,59 @@ export function HomeView({ locale }: { locale: Locale }) {
                 >
                   {text.projects.viewCase}
                 </Link>
-                <a
-                  href={featured.repo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-muted transition-colors hover:text-ink"
-                >
-                  {text.projects.viewRepo}
-                </a>
+                {featured.repo ? (
+                  <a
+                    href={featured.repo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-muted transition-colors hover:text-ink"
+                  >
+                    {text.projects.viewRepo}
+                  </a>
+                ) : null}
               </div>
             </article>
           </Reveal>
         ) : null}
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((project, index) => (
             <Reveal key={project.slug} delay={120 + index * 80}>
-              <article className="lift h-full border border-line bg-paper/40 p-5">
-                <h3 className="font-display text-xl">{project.name}</h3>
-                <p className="mt-3 text-sm leading-6 text-muted">
+              <article className="lift flex h-full flex-col border border-line bg-paper/40 p-5">
+                <p className="font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
+                  {project.kind === "production"
+                    ? text.projects.production
+                    : text.projects.opensource}
+                </p>
+                <h3 className="mt-2 font-display text-xl">{project.name}</h3>
+                <p className="mt-3 flex-1 text-sm leading-6 text-muted">
                   {project.summary[locale]}
                 </p>
                 <p className="mt-4 font-mono text-[11px] text-pine">
                   {project.tags.join(" · ")}
                 </p>
-                <a
-                  href={project.repo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-block text-sm text-accent-dark underline decoration-accent/40 underline-offset-4"
-                >
-                  {text.projects.viewRepo}
-                </a>
+                <div className="mt-5 flex flex-wrap gap-4 text-sm">
+                  {project.live ? (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-accent-dark underline decoration-accent/40 underline-offset-4"
+                    >
+                      {text.projects.viewLive}
+                    </a>
+                  ) : null}
+                  {project.repo ? (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-accent-dark underline decoration-accent/40 underline-offset-4"
+                    >
+                      {text.projects.viewRepo}
+                    </a>
+                  ) : null}
+                </div>
               </article>
             </Reveal>
           ))}
@@ -197,7 +250,7 @@ export function HomeView({ locale }: { locale: Locale }) {
 
       <section id="contato" className="scroll-mt-24 py-16 sm:py-20">
         <Reveal>
-          <SectionLabel index="04" title={text.contact.heading} />
+          <SectionLabel index="05" title={text.contact.heading} />
         </Reveal>
         <Reveal delay={80}>
           <p className="mt-8 max-w-xl text-lg text-muted">{text.contact.lead}</p>

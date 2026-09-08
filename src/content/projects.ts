@@ -4,18 +4,20 @@ export type Project = {
   slug: string;
   featured?: boolean;
   name: string;
-  repo: string;
+  repo?: string;
   live?: string;
+  kind: "opensource" | "production";
   tags: string[];
   summary: Record<Locale, string>;
 };
 
 export const projects: Project[] = [
   {
-    slug: "exemplo-tech",
+    slug: "devstore",
     featured: true,
-    name: "Exemplo Tech",
+    name: "DevStore",
     repo: "https://github.com/balbino05/exemplo-tech",
+    kind: "opensource",
     tags: [
       "Laravel",
       "GraphQL",
@@ -26,48 +28,73 @@ export const projects: Project[] = [
       "Hyperf",
       "RabbitMQ",
       "Redis",
+      "Docker",
     ],
     summary: {
-      pt: "Plataforma de demonstração full stack: API Laravel com GraphQL e JWT, SPA em Vue/Quasar, e microserviços em Hyperf, Go e Python com RabbitMQ e Redis. Mostra o recorte que eu gosto de trabalhar — frontend reativo, backend e processamento assíncrono no mesmo produto.",
-      en: "Full stack demo platform: Laravel GraphQL API with JWT, Vue/Quasar SPA, and Hyperf, Go, and Python microservices on RabbitMQ and Redis. This is the slice of work I enjoy — reactive UI, backend, and async processing in one product.",
+      pt: "Plataforma full stack de catálogo e operações: API Laravel com GraphQL e JWT, SPA em Vue/Quasar e microserviços em Hyperf, Go e Python com RabbitMQ e Redis. Arquitetura completa com auth, filas, relatórios e dashboard.",
+      en: "Full stack catalog and operations platform: Laravel GraphQL API with JWT, Vue/Quasar SPA, and Hyperf, Go, and Python microservices on RabbitMQ and Redis. Complete architecture with auth, queues, reports, and a dashboard.",
     },
   },
   {
-    slug: "captchajoomla",
-    name: "Captcha Joomla",
-    repo: "https://github.com/balbino05/captchajoomla",
-    tags: ["PHP", "Joomla", "Plugin"],
+    slug: "cargo-sapiens",
+    name: "Cargo Sapiens",
+    live: "https://cargosapiens.com/",
+    kind: "production",
+    tags: ["Laravel", "PHP", "JavaScript", "MySQL", "Logística"],
     summary: {
-      pt: "Captcha auto-hospedado para Joomla, com desafio de imagens no estilo reCAPTCHA v2 — sem chaves Google. Inclui plugin de login.",
-      en: "Self-hosted Joomla captcha with an image challenge in the reCAPTCHA v2 style — no Google keys. Includes a login plugin.",
+      pt: "Atuação na plataforma de cotação e gestão de fretes (marítimo, aéreo, rodoviário e multimodal). Regras de negócio, interfaces e integrações em ambiente de produção para comércio exterior.",
+      en: "Work on the freight quoting and management platform (ocean, air, road, and multimodal). Business rules, UI, and integrations in a production foreign-trade environment.",
     },
   },
   {
-    slug: "citymap",
-    name: "Citymap",
-    repo: "https://github.com/balbino05/citymap",
-    tags: ["PHP", "Vue", "Geolocalização"],
+    slug: "fasters-health",
+    name: "Sistema de saúde (Fasters)",
+    kind: "production",
+    tags: ["Vue 3", "Node.js", "PHP", "GraphQL", "APIs"],
     summary: {
-      pt: "Aplicação de mapa/geolocalização com backend PHP e frontend Vue (repositórios citymap e citymap-frontend).",
-      en: "Map / geolocation app with a PHP backend and Vue frontend (citymap and citymap-frontend repos).",
+      pt: "Sistema para a área da saúde com gestão e processamento de dados médicos. Integração de APIs, consultas otimizadas e fluxos de frontend em Vue 3 com GraphQL.",
+      en: "Healthcare system for medical data management and processing. API integration, optimized queries, and Vue 3 frontend flows over GraphQL.",
     },
   },
   {
-    slug: "ecoleta",
-    name: "Ecoleta",
-    repo: "https://github.com/balbino05/ecoleta",
-    tags: ["Node", "React", "React Native"],
+    slug: "dictionary-api",
+    name: "Dictionary API",
+    repo: "https://github.com/balbino05/Backend-Dictionary",
+    kind: "opensource",
+    tags: ["Laravel", "MySQL", "Redis", "Passport", "Swagger"],
     summary: {
-      pt: "Marketplace de coleta de resíduos da Next Level Week: API, web e mobile para conectar pessoas a pontos de coleta.",
-      en: "Waste-collection marketplace from Next Level Week: API, web, and mobile to connect people with collection points.",
+      pt: "API RESTful de dicionário (desafio Coodesh): autenticação com Laravel Passport, cache Redis, MySQL e documentação OpenAPI/Swagger. Backend completo, pronto para consumo.",
+      en: "Dictionary REST API (Coodesh challenge): Laravel Passport auth, Redis cache, MySQL, and OpenAPI/Swagger docs. A complete backend ready for clients.",
+    },
+  },
+  {
+    slug: "proeventos",
+    name: "ProEventos",
+    repo: "https://github.com/balbino05/ProEventos",
+    kind: "opensource",
+    tags: ["Angular", ".NET", "C#", "SQL Server"],
+    summary: {
+      pt: "Aplicação full stack de eventos com Angular no frontend e .NET no backend. CRUD, autenticação e fluxo de gestão de eventos ponta a ponta.",
+      en: "Full stack events app with Angular on the frontend and .NET on the backend. CRUD, auth, and end-to-end event management.",
+    },
+  },
+  {
+    slug: "pass-in",
+    name: "Pass.in",
+    repo: "https://github.com/balbino05/pass-in",
+    kind: "opensource",
+    tags: ["Java", "API", "Eventos"],
+    summary: {
+      pt: "API de check-in para eventos (NLW Unite): cadastro de participantes, credenciamento e consulta de presença. Backend em Java focado em regras de evento.",
+      en: "Event check-in API (NLW Unite): participant registration, badge flow, and attendance lookup. Java backend focused on event rules.",
     },
   },
 ];
 
-export const exemploTechCase = {
+export const featuredCase = {
   role: {
-    pt: "Projeto pessoal de demonstração técnica — arquitetura, API, frontend e microserviços.",
-    en: "Personal technical showcase — architecture, API, frontend, and microservices.",
+    pt: "Projeto pessoal de demonstração técnica: arquitetura, API, frontend e microserviços.",
+    en: "Personal technical showcase covering architecture, API, frontend, and microservices.",
   },
   layers: [
     {

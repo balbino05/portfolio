@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { exemploTechCase, getProject } from "@/content/projects";
+import { featuredCase, getProject } from "@/content/projects";
 import { t } from "@/content/site";
 import { type Locale, localePath } from "@/lib/i18n";
 
 export function CaseView({ locale }: { locale: Locale }) {
-  const project = getProject("exemplo-tech");
+  const project = getProject("devstore");
   const text = t(locale);
 
   if (!project) {
@@ -37,7 +37,7 @@ export function CaseView({ locale }: { locale: Locale }) {
             <dt className="font-mono text-[11px] tracking-widest text-muted uppercase">
               {text.caseStudy.role}
             </dt>
-            <dd className="mt-2 leading-6">{exemploTechCase.role[locale]}</dd>
+            <dd className="mt-2 leading-6">{featuredCase.role[locale]}</dd>
           </div>
           <div>
             <dt className="font-mono text-[11px] tracking-widest text-muted uppercase">
@@ -53,7 +53,7 @@ export function CaseView({ locale }: { locale: Locale }) {
           {text.caseStudy.architecture}
         </h2>
         <div className="mt-6 space-y-6">
-          {exemploTechCase.layers.map((layer) => (
+          {featuredCase.layers.map((layer) => (
             <section
               key={layer.title.en}
               className="border-l-2 border-accent/50 pl-4"
@@ -68,7 +68,7 @@ export function CaseView({ locale }: { locale: Locale }) {
       <Reveal delay={120}>
         <h2 className="mt-12 font-display text-3xl">{text.caseStudy.flow}</h2>
         <ol className="mt-6 space-y-3">
-          {exemploTechCase.flow[locale].map((step, index) => (
+          {featuredCase.flow[locale].map((step, index) => (
             <li key={step} className="flex gap-4 text-muted">
               <span className="font-mono text-xs text-accent">
                 {String(index + 1).padStart(2, "0")}
@@ -79,14 +79,16 @@ export function CaseView({ locale }: { locale: Locale }) {
         </ol>
       </Reveal>
 
-      <a
-        href={project.repo}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-12 inline-flex rounded-full bg-ink px-5 py-2.5 text-sm text-paper transition-transform hover:-translate-y-0.5 hover:bg-accent-dark"
-      >
-        {text.caseStudy.repo}
-      </a>
+      {project.repo ? (
+        <a
+          href={project.repo}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-12 inline-flex rounded-full bg-ink px-5 py-2.5 text-sm text-paper transition-transform hover:-translate-y-0.5 hover:bg-accent-dark"
+        >
+          {text.caseStudy.repo}
+        </a>
+      ) : null}
     </main>
   );
 }
