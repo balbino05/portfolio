@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Reveal } from "@/components/reveal";
@@ -13,29 +14,48 @@ export function HomeView({ locale }: { locale: Locale }) {
 
   return (
     <main className="mx-auto w-full max-w-5xl px-6">
-      <section className="border-b border-line py-20 sm:py-28">
-        <p className="hero-in hero-d1 font-mono text-xs tracking-[0.22em] text-accent uppercase">
-          {text.hero.kicker}
-        </p>
-        <h1 className="hero-in hero-d2 mt-5 font-display text-5xl leading-[1.05] tracking-tight sm:text-7xl">
-          {text.hero.title}
-        </h1>
-        <p className="hero-in hero-d3 mt-6 max-w-xl text-lg leading-relaxed text-muted">
-          {text.hero.lead}
-        </p>
-        <div className="hero-in hero-d4 mt-10 flex flex-wrap gap-3">
-          <Link
-            href="#projetos"
-            className="rounded-full bg-ink px-5 py-2.5 text-sm text-paper transition-transform hover:-translate-y-0.5 hover:bg-accent-dark"
-          >
-            {text.hero.ctaProjects}
-          </Link>
-          <Link
-            href="#contato"
-            className="rounded-full border border-ink px-5 py-2.5 text-sm transition-colors hover:border-accent hover:bg-paper-2"
-          >
-            {text.hero.ctaContact}
-          </Link>
+      <section className="grid items-center gap-12 border-b border-line py-20 sm:py-28 lg:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p className="hero-in hero-d1 font-mono text-xs tracking-[0.22em] text-accent uppercase">
+            {text.hero.kicker}
+          </p>
+          <h1 className="hero-in hero-d2 mt-5 font-display text-5xl leading-[1.05] tracking-tight sm:text-7xl">
+            {text.hero.title}
+          </h1>
+          <p className="hero-in hero-d3 mt-6 max-w-xl text-lg leading-relaxed text-muted">
+            {text.hero.lead}
+          </p>
+          <div className="hero-in hero-d4 mt-10 flex flex-wrap gap-3">
+            <Link
+              href="#projetos"
+              className="rounded-full bg-ink px-5 py-2.5 text-sm text-paper transition-transform hover:-translate-y-0.5 hover:bg-accent-dark"
+            >
+              {text.hero.ctaProjects}
+            </Link>
+            <Link
+              href="#contato"
+              className="rounded-full border border-ink px-5 py-2.5 text-sm transition-colors hover:border-accent hover:bg-paper-2"
+            >
+              {text.hero.ctaContact}
+            </Link>
+          </div>
+        </div>
+
+        <div className="hero-in hero-d3 relative mx-auto w-full max-w-[280px] sm:max-w-[320px] lg:max-w-none">
+          <div
+            className="absolute -inset-6 rounded-full bg-[radial-gradient(circle,color-mix(in_srgb,var(--accent)_28%,transparent),transparent_70%)] blur-2xl"
+            aria-hidden
+          />
+          <div className="photo-ring relative aspect-square overflow-hidden rounded-full border border-line bg-paper-2 shadow-[0_30px_80px_-40px_color-mix(in_srgb,var(--accent)_55%,transparent)]">
+            <Image
+              src={site.photo}
+              alt={site.fullName}
+              fill
+              priority
+              sizes="(max-width: 1024px) 280px, 360px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 

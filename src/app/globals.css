@@ -205,6 +205,42 @@ body {
   box-shadow: 0 22px 40px -24px color-mix(in srgb, var(--accent) 55%, transparent);
 }
 
+.photo-ring {
+  animation: photo-float 8s ease-in-out infinite;
+}
+
+.photo-ring::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  animation: photo-ring-pulse 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes photo-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes photo-ring-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -213,7 +249,9 @@ body {
   .ambient-blob,
   .hero-in,
   .reveal,
-  .lift {
+  .lift,
+  .photo-ring,
+  .photo-ring::after {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;

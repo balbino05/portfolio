@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     alternateLocale: "en_US",
     type: "website",
+    images: [{ url: "/ivan-balbino.jpg", width: 460, height: 460 }],
   },
 };
 
